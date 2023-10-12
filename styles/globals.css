@@ -2,26 +2,243 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
+
+/* src/App.css */
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  /* Hide any potential overflow */
 }
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  /* background: #1e2969; */
+
+}
+
+h1 {
+  font-size: larger;
+  color: #afa620;
+}
+
+.list-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0; /* Remove margin */
+  padding: 0; /* Remove padding */
+   /* Hide any potential overflow */
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  width: 700px;
+  /* margin: 0 auto; */
+  background-color: #36434e;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #011627;
+  padding: 10px 12px;
+  margin: 10px 0;
+  background-color: #011627;
+  border-radius: 8px;
+}
+
+.title{
+ color: #fff;
+}
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  gap: 80px;
+  
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.add-todo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+input[type="text"] {
+  padding: 15px 10px;
+  border: 3px solid #ddd;
+  width: 400px;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:hover{
+ border:3px solid #011627;
+ outline: none;
+}
+
+.add-btn{
+  padding: 15px 10px;
+  background-color:#011627;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.add-btn:hover{
+  background-color: #02213b;
+}
+
+/* TodoItem.css */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #f9f9f9;
+  
+}
+
+.todo-item span{
+  cursor: pointer;
+}
+
+.todo-item.completed {
+  background-color: #011627; /* Change the background color for completed tasks */
+  color:white ;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 30px;
+  /* align-items: center; */
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.custom-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  width: 30px;
+  background-color: #eee;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+}
+
+.custom-checkbox input:checked ~ .custom-checkmark {
+  background-color: #007bff; /* Change the color when checked */
+}
+
+.custom-checkbox input:checked ~ .custom-checkmark:after {
+  content: '';
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: white;
+  height: 10px;
+  width: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.delete-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ff6347; /* Red color for delete button */
+  margin-left: 10px; /* Add spacing between delete button and custom icon */
+}
+
+.delete-button:hover {
+  color: #e74c3c; /* Darker red on hover */
+}
+
+/* Customize the styles for React Icons trash icon */
+.delete-button svg {
+  vertical-align: middle; /* Align the icon vertically */
+}
+
+.update-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #15ad33; /* Red color for delete button */
+  margin-left: 10px; /* Add spacing between delete button and custom icon */
+}
+
+.update-btn:hover {
+  color: #055b1e; /* Darker red on hover */
+}
+
+/* Customize the styles for React Icons trash icon */
+.update-btn svg {
+  vertical-align: middle; /* Align the icon vertically */
+}
+
+.close-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #ff6347; /* Red color for delete button */
+  margin-left: 10px; /* Add spacing between delete button and custom icon */
+}
+
+.close-btn:hover {
+  color: #e74c3c; /* Darker red on hover */
+}
+
+/* Customize the styles for React Icons trash icon */
+.close-btn svg {
+  vertical-align: middle; /* Align the icon vertically */
+}
+
+
+
+
+
+
+
