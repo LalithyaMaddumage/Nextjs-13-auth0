@@ -35,7 +35,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="bg-[#232358] h-[100vh] p-20">
       {/* Display AddTodo and TodoList components only if the user is authenticated */}
       {user ? (
         <div className="App">
@@ -48,7 +48,7 @@ const Index: React.FC = () => {
           </div>
         </div>
       ) : (
-        <p>Please log in to manage your to-do list.</p>
+        <p className="text-[white] text-xl">Please log in to manage your to-do list.</p>
       )}
 
       <div>
@@ -58,10 +58,16 @@ const Index: React.FC = () => {
           <div>{error.message}</div>
         ) : user ? (
           <div className="mt-[-50px]">
-            Welcome {user.name}! <a href="/api/auth/logout">Logout</a>
+            {/* Welcome {user.name}!  */}
+          <div className="w-[80px] h-[35px] rounded-md mt-[-50px] bg-[#202b4e] flex row items-center justify-center">
+            <a href="/api/auth/logout">Logout</a>
+          </div>
           </div>
         ) : (
-          <a href="/api/auth/login">Login</a>
+          <div className="w-[80px] h-[35px] rounded-md mt-10 bg-white flex row items-center justify-center">
+             <a  href="/api/auth/login">Login</a>
+          </div>
+         
         )}
       </div>
     </div>
