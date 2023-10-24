@@ -3,7 +3,7 @@
 import axios from 'axios';
 import { Todo, CreateTodoPayload, UpdateTodoPayload } from './todos'; // Import the types
 
-const BASE_URL = 'http://localhost:8000'; //  backend URL
+const BASE_URL = 'http://localhost:5001'; //  backend URL
 
 // Function to fetch todos
 export const fetchTodos = async (): Promise<Todo[]> => {
