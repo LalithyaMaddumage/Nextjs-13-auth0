@@ -13,6 +13,7 @@ body {
   height: 100%;
   /* Hide any potential overflow */
 }
+
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -25,18 +26,22 @@ h1 {
   color: #afa620;
 }
 
-.list-wrapper{
+.list-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  margin: 0; /* Remove margin */
-  padding: 0; /* Remove padding */
-   /* Hide any potential overflow */
+  /* height: 100vh; */
+  margin: 0;
+  /* Remove margin */
+  /* padding: 0;
+   */
+  padding-top: 100px;
+  /* Remove padding */
+  /* Hide any potential overflow */
 }
 
-.list{
+.list {
   display: flex;
   flex-direction: column;
   /* gap: 20px; */
@@ -50,7 +55,7 @@ h1 {
 ul {
   list-style: none;
   padding: 0;
-  
+
 }
 
 li {
@@ -64,17 +69,17 @@ li {
   border-radius: 8px;
 }
 
-.title{
- color: #fff;
+.title {
+  color: #fff;
 }
 
-.actions{
+.actions {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-self: end;
   gap: 80px;
-  
+
 }
 
 button {
@@ -86,7 +91,7 @@ button {
   margin-left: 10px;
 }
 
-.add-todo{
+.add-todo {
   width: 100%;
   display: flex;
   align-items: center;
@@ -102,19 +107,19 @@ input[type="text"] {
   outline: none;
 }
 
-input:hover{
- border:3px solid #011627;
- outline: none;
+input:hover {
+  border: 3px solid #011627;
+  outline: none;
 }
 
-.add-btn{
+.add-btn {
   padding: 15px 10px;
-  background-color:#011627;
+  background-color: #011627;
   font-weight: bold;
   border-radius: 8px;
 }
 
-.add-btn:hover{
+.add-btn:hover {
   background-color: #02213b;
 }
 
@@ -128,16 +133,17 @@ input:hover{
   padding: 10px;
   margin: 5px 0;
   background-color: #f9f9f9;
-  
+
 }
 
-.todo-item span{
+.todo-item span {
   cursor: pointer;
 }
 
 .todo-item.completed {
-  background-color: #011627; /* Change the background color for completed tasks */
-  color:white ;
+  background-color: #011627;
+  /* Change the background color for completed tasks */
+  color: white;
 }
 
 .custom-checkbox {
@@ -165,11 +171,12 @@ input:hover{
   border-radius: 50%;
 }
 
-.custom-checkbox input:checked ~ .custom-checkmark {
-  background-color: #007bff; /* Change the color when checked */
+.custom-checkbox input:checked~.custom-checkmark {
+  background-color: #007bff;
+  /* Change the color when checked */
 }
 
-.custom-checkbox input:checked ~ .custom-checkmark:after {
+.custom-checkbox input:checked~.custom-checkmark:after {
   content: '';
   position: absolute;
   display: block;
@@ -187,17 +194,21 @@ input:hover{
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #ff6347; /* Red color for delete button */
-  margin-left: 10px; /* Add spacing between delete button and custom icon */
+  color: #ff6347;
+  /* Red color for delete button */
+  margin-left: 10px;
+  /* Add spacing between delete button and custom icon */
 }
 
 .delete-button:hover {
-  color: #e74c3c; /* Darker red on hover */
+  color: #e74c3c;
+  /* Darker red on hover */
 }
 
 /* Customize the styles for React Icons trash icon */
 .delete-button svg {
-  vertical-align: middle; /* Align the icon vertically */
+  vertical-align: middle;
+  /* Align the icon vertically */
 }
 
 .update-btn {
@@ -205,17 +216,21 @@ input:hover{
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #15ad33; /* Red color for delete button */
-  margin-left: 10px; /* Add spacing between delete button and custom icon */
+  color: #15ad33;
+  /* Red color for delete button */
+  margin-left: 10px;
+  /* Add spacing between delete button and custom icon */
 }
 
 .update-btn:hover {
-  color: #055b1e; /* Darker red on hover */
+  color: #055b1e;
+  /* Darker red on hover */
 }
 
 /* Customize the styles for React Icons trash icon */
 .update-btn svg {
-  vertical-align: middle; /* Align the icon vertically */
+  vertical-align: middle;
+  /* Align the icon vertically */
 }
 
 .close-btn {
@@ -223,22 +238,19 @@ input:hover{
   border: none;
   cursor: pointer;
   font-size: 20px;
-  color: #ff6347; /* Red color for delete button */
-  margin-left: 10px; /* Add spacing between delete button and custom icon */
+  color: #ff6347;
+  /* Red color for delete button */
+  margin-left: 10px;
+  /* Add spacing between delete button and custom icon */
 }
 
 .close-btn:hover {
-  color: #e74c3c; /* Darker red on hover */
+  color: #e74c3c;
+  /* Darker red on hover */
 }
 
 /* Customize the styles for React Icons trash icon */
 .close-btn svg {
-  vertical-align: middle; /* Align the icon vertically */
+  vertical-align: middle;
+  /* Align the icon vertically */
 }
-
-
-
-
-
-
-
