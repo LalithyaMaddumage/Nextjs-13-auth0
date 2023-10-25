@@ -94,16 +94,17 @@ const TodoItem: React.FC<TodoItemProps> = ({ todo, setIsChanged }) => {
     <li className={`todo-item ${completed ? "completed" : ""}`}>
       {isEditing ? (
         // Editing mode with input field
-        <div className="edit-modal">
+        <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
           <input
             type="text"
+            style={{ color: 'black' }}
             value={updatedTitle}
             onChange={(e) => setUpdatedTitle(e.target.value)}
           />
           <button className="update-btn" onClick={handleUpdateTitle}>
             <FontAwesomeIcon icon={faCheck} />
           </button>
-          <button className="close-btn" onClick={handleEditCancel}>
+          <button className="close-btn pr-[20px]" onClick={handleEditCancel}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>

@@ -39,8 +39,28 @@ const Index: React.FC = () => {
       {/* Display AddTodo and TodoList components only if the user is authenticated */}
       {user ? (
         <div className="App">
+          <div>
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : error ? (
+              <div>{error.message}</div>
+            ) : user ? (
+              <div className="mt-[-50px]">
+                {/* Welcome {user.name}!  */}
+                <div className="w-[80px] h-[35px] rounded-md mt-[-50px] bg-[#ffffff] flex row items-center justify-center">
+                  <a href="/api/auth/logout">Logout</a>
+                </div>
+              </div>
+            ) : (
+              <div className="w-[80px] h-[35px] rounded-md mt-10 bg-white flex row items-center justify-center">
+                <a href="/api/auth/login">Login</a>
+              </div>
+
+            )}
+          </div>
           <div className="list-wrapper">
             <div className="list">
+
               <h1>My To-Do List</h1>
               <AddTodo setIsChanged={setIsChanged} />
               <TodoList todos={todos} setIsChanged={setIsChanged} />
@@ -56,18 +76,12 @@ const Index: React.FC = () => {
           <div>Loading...</div>
         ) : error ? (
           <div>{error.message}</div>
-        ) : user ? (
-          <div className="mt-[-50px]">
-            {/* Welcome {user.name}!  */}
-          <div className="w-[80px] h-[35px] rounded-md mt-[-50px] bg-[#202b4e] flex row items-center justify-center">
-            <a href="/api/auth/logout">Logout</a>
-          </div>
-          </div>
-        ) : (
+        ) : !user &&
+        (
           <div className="w-[80px] h-[35px] rounded-md mt-10 bg-white flex row items-center justify-center">
-             <a  href="/api/auth/login">Login</a>
+            <a href="/api/auth/login">Login</a>
           </div>
-         
+
         )}
       </div>
     </div>
